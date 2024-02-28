@@ -1,2 +1,6 @@
 # USFCA Education Hackathon
-Created a full-stack web application intended for young kids to learn in the Quizlet style
+A complete web application with interactive flashcards featuring a child-friendly and engaging user interface, aimed at facilitating learning for young children.
+
+
+
+
