@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Learning Leap</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+
+	</head>
+	<style>
+		img {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		.button{
+			font-size: 20px;
+			width: 100px;
+			background-color: #58C074;
+			color: #F5F3C7;
+			border: none;
+			cursor: pointer;
+			padding: 15px ;
+			text-align: center;
+			margin-right: 15px;
+		}
+		.flex-parent {
+			display: flex;
+			}
+
+		.jc-center {
+			justify-content: center;
+			}
+
+		/*center{
+			width : 100px;
+			display: block;
+		  	margin-left: auto;
+		  	margin-right: auto;
+		}*/
+	</style>
+	<body style = "background-color: #F5F3C7;">
+		<h1 style = "font-family: 'Inika', serif; text-align: center; color: #F5F3C7">What is this?</h1>
+		<img id = "Dolphin" src="data:image/jpeg;base64,{{img}}"
+		height = '300px' width = '500px'>
+		<br />
+		<br />
+		<form action = "{{action}}" method = 'post'>
+			<p style="font-family: 'Inika', serif; text-align:center;">Choose the right answer</p>
+			<br />
+			<br />
+			<div class = "flex-parent jc-center">
+				<button class = "button" type= "submit" name = "Choice1" id = "but1">{{ans1}}</button>
+				<button class = "button" type= "submit" name = "Choice2" id = "but2">{{ans2}}</button>
+				<br />
+				<br />
+				<button class = "button" type= "submit" name = "Choice3" id = "but3">{{ans3}}</button>
+				<button class = "button" type= "submit" name = "Choice4" id = "but4">{{ans4}}</button>
+			</div>
+		</form>
+		<script>
+			const form = document.getElementbyId('form');
+			const button = document.getElementById('but2');
+
+			button.addEventListener('click', () => {
+
+  				fetch('/results', {
+					method: 'POST',
+					body: new FormData(form)
+				})
+    				.then(response => response.json())
+    				.then(data => console.log(data))
+					.catch(error => console.error(error));
+			});
+		</script>
+
+		<!-- <script src="test.js"></script> -->
+		
+			<!-- 
+				this stuff is the old button types, idk if the button attribute is better than the input type instead -->
+
+			<!-- <input style="font-size: 20px;width:100px" type = "button" value = "Dog" id = "1">
+			<input style="font-size: 20px;width:100px" type = "button" value = "Dolphin" id = "2">
+			<br />
+			<br />
+			<input style="font-size: 20px;width:100px;" type = "button" value = "Whale" id = "3">
+			<input style="font-size: 20px;width:100px;text-align:center;" type = "button" value = "Cat" id = "4"> -->
+
+	</body>
+</html>

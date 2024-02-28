@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Results</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+
+	</head>
+	<body style = "background-color: #FFFCE1;">
+		<br />
+		<br />
+		<p style = "font-size: 30px; text-align: center; font-family: Inika, serif;">Results....</p>
+		<form action="/", method="post">
+					<style>
+						.container {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+						}
+				
+						.progress-bar {
+							width: 400px;
+							height: 60px;
+							background-color: #ddd;
+							border-radius: 10px;
+							position: relative;
+							margin-bottom: 20px;
+							overflow: hidden;
+						}
+				
+						.progress-bar span {
+							background-color: #0C9;
+							height: 100%;
+							position: absolute;
+							left: 0;
+							top: 0;
+							animation: progressBar3 3s ease-in-out;
+						}
+						.progress-bar.above-average span {
+   							background-color: #2ECC71;
+    						animation: progressBar1 3s ease-in-out;
+						}
+
+						.progress-bar.average span {
+   							 background-color: #F1C40F;
+   							 animation: progressBar2 3s ease-in-out;
+						}
+
+						.progress-bar.below-average span {
+   							background-color: #E74C3C;
+   							 animation: progressBar3 3s ease-in-out;
+						}
+
+				
+						@keyframes progressBar1 {
+   							 0% { width: 0; }
+    						100% { width: 90%; }
+						}
+
+						@keyframes progressBar2 {
+   							 0% { width: 0; }
+    						100% { width: 63%; }
+						}
+
+						@keyframes progressBar3 {
+    						0% { width: 0; }
+    						100% { width: 25%; }
+						}
+				
+						.progress-bar.above-average span {
+							background-color: #2ECC71;
+							width: 90%;
+						}
+				
+						.progress-bar.average span {
+							background-color: #ecc93c;
+							width: 63%;
+						}
+				
+						.progress-bar.below-average span {
+							background-color: #e97062;
+							width: 25%;
+						}
+				
+						.progress-label {
+							margin-top: 20px;
+							margin-bottom: 10px;
+							font-size: 20px;
+							font-weight: bold;
+						}
+
+						.play-again {
+							font-family: 'Inika', sans-serif;
+							font-size: 20px;
+							color: #fff;
+							background-color: #AFD670;
+							border: none;
+							border-radius: 10px;
+							padding: 10px 20px;
+							margin-top: 40px;
+							cursor: pointer;
+							box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+							transition: background-color 0.3s ease-in-out;
+						}
+
+						.play-again:hover {
+							background-color: #F1C40F;
+						}
+
+					</style>
+				</head>
+				<body>
+				
+					<div class="container">
+				
+						<div class="progress-label">Remember to keep practicing for continous great results!</div>
+						<div class="progress-bar above-average">
+							<span class="progress-fill"> </span>
+						</div>
+				
+						<!-- <div class="progress-label">Mammals</div>
+						<div class="progress-bar average">
+							<span class="progress-fill"></span>
+						</div>
+				
+						<div class="progress-label">Birds</div>
+						<div class="progress-bar below-average">
+							<span class="progress-fill"></span>
+						</div> -->
+
+						<button class="play-again">Play Again</button>
+					</div>
+	</body>
+	</html>
